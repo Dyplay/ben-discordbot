@@ -21,6 +21,21 @@ client.on('message' , (msg) => {
   }
 })
 
+client.on('message' , (msg) => {
+  if(msg.content == `@${client} help` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setAuthor('ben')
+      .setTitle('credits')
+      .setDescription(` Programmer: Dyplay | 
+      His Server: https://discord.gg/paVRxtce78ups`)
+      .setFooter(`@zodclips - owner`)
+
+      msg.channel.send(embed)
+  }
+})
+
+
 client.on('message', message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
