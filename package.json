@@ -1,0 +1,16 @@
+{
+  "name": "reply-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that automatically replies and reacts to user messages",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run index.js"
+  },
+  "author": "Eshan Bharadwaj",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.9.0",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
+  }
+}
