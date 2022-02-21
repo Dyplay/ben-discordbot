@@ -1,8 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const {MessageEmbed} = require('discord.js')
-const { MessageActionRow, MessageButton } = require('discord.js');
-const Canvas = require('canvas');
 const prefix = "."
 
 client.once("ready", () => {
