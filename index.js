@@ -89,10 +89,20 @@ client.on('message' , (msg) => {
 })
 
 client.on('message' , (msg) => {
+  if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setThumbnail('')
+      .setTitle('Invite')
+      .setDescription('Invite link: https://discord.com/api/oauth2/authorize?client_id=944657700606861372&permissions=414464661569&scope=bot')
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (msg) => {
   if(msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
     let avatarUrl = user.displayAvatarURL()
       var embed = new Discord.MessageEmbed()
-      .setThumbnail(`${avatarUrl}`)
+      .setThumbnail(avatarUrl)
       .setColor('#fc9607')
       .setAuthor('ben')
       .setTitle('credits')
@@ -110,7 +120,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
   switch(args[0]) {
-    case 'ben':
+    case `ben ${message.author}`:
         rndMessage(message)
 
         function rndMessage(message) {
@@ -135,7 +145,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
   switch(args[0]) {
-    case 'Ben':
+    case `Ben ${message.author}`:
         rndMessage(message)
 
         function rndMessage(message) {
