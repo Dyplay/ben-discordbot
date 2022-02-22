@@ -10,7 +10,8 @@ client.once("ready", () => {
 const activities = [
   ".help to Start!",
   "Creator: Dyplay",
-  "Hi i am Talking Ben!"
+  "Hi i am Talking Ben!",
+  ``
 ];
 
 client.on("ready", () => {
@@ -25,28 +26,20 @@ client.on("ready", () => {
 });
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + "credits" && msg.guild && !msg.member.user.bot){
-      var embed = new Discord.MessageEmbed()
-      .setColor('#fc9607')
-      .setTitle("Invite")
-      .setDescription("")
-
-      msg.channel.send(embed)
-  }
-})
-
-client.on('message' , (msg) => {
   if(msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
       .setAuthor('Ben')
       .setTitle('Command list')
+      .setDescription(`Requested By: ${msg.author.username}`)
       .addField(".help", "going to show you this page. (Showing you the help page) ")
       .addField(".credits ", "credits from the bot creator")
       .addField(".ben <message>", "tell something to ben.")
       .addField(".version", "show's you the bot's version!")
       .addField(".drink", "Ben will drink")
       .addField(".eat", "Ben will eat")
+      .addField(".newspaper", "Ben will read the newspaper")
+      .addField(".burp", "Ben will burp")
       msg.channel.send(embed)
   }
 })
@@ -56,6 +49,7 @@ client.on('message' , (msg) => {
       var embed = new Discord.MessageEmbed()
       .setTitle("Talking Ben version")
       .setDescription("version: v0.1")
+      .addField(`Requested by:`, `${msg.author.username}`)
       msg.channel.send(embed)
   }
 })
@@ -64,18 +58,19 @@ client.on('message' , (msg) => {
   if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setImage("https://c.tenor.com/UZOcqAyMu4QAAAAd/talking-ben-eating.gif")
+      .addField(`Requested by:`, `${msg.author.username}`)
       msg.channel.send(embed)
   }
 })
 
 client.on('message' , (message) => {
-  if(message.content.includes == "ben") {
+  if(message.content == "ben") {
     message.reply("try it with ``.ben + your message`` ;D")
   }
 })
 
 client.on('message' , (message) => {
-  if(message.content.includes == "Ben") {
+  if(message.content == "Ben") {
     message.reply("try it with ``.ben + your message`` ;D")
   }
 })
@@ -84,6 +79,7 @@ client.on('message' , (msg) => {
   if(msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
+      .addField(`Requested by:`, `${msg.author.username}`)
       msg.channel.send(embed)
   }
 })
@@ -94,6 +90,7 @@ client.on('message' , (msg) => {
       .setThumbnail('')
       .setTitle('Invite')
       .setDescription('Invite link: https://discord.com/api/oauth2/authorize?client_id=944657700606861372&permissions=414464661569&scope=bot')
+      .addField(`Requested by:`, `${msg.author.username}`)
       msg.channel.send(embed)
   }
 })
@@ -107,7 +104,7 @@ client.on('message' , (msg) => {
       .setTitle('credits')
       .setDescription(` Programmer: Dyplay | 
       His Server: https://discord.gg/paVRxtce78ups`)
-      .addField(`Requested from:`, `${msg.author.username}`)
+      .addField(`Requested by:`, `${msg.author.username}`)
       .setFooter(`@zodclips - owner`)
 
       msg.channel.send(embed)
@@ -119,26 +116,55 @@ client.on('message' , (msg) => {
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
       .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
-      .addField(`Requested from:`, `${msg.author.username}`)
+      .addField(`Requested by:`, `${msg.author.username}`)
 
       msg.channel.send(embed)
   }
 })
-
 
 client.on('message' , (msg) => {
   if(msg.content == prefix + `Newspaper` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
       .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
-      .addField(`Requested from:`, `${msg.author.username}`)
+      .addField(`Requested by:`, `${msg.author.username}`)
 
       msg.channel.send(embed)
   }
 })
 
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
+      .addField(`Requested by:`, `${msg.author.username}`)
 
+      msg.channel.send(embed)
+  }
+})
 
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `burp` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
+      .addField(`Requested by:`, `${msg.author.username}`)
+
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `Burp` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
+      .addField(`Requested by:`, `${msg.author.username}`)
+
+      msg.channel.send(embed)
+  }
+})
 
 client.on('message', message => {
 
@@ -154,7 +180,7 @@ client.on('message', message => {
             "No",
             "Hahahah",
             "~ Hangs up ~",
-            "~ eeeehhhhwww ~"
+            "~ Ugh ~"
           ]
           var rnd = Math.floor(Math.random() * messages.length);
         
@@ -180,7 +206,7 @@ client.on('message', message => {
             "No",
             "Hahahah",
             "~ Hangs up ~",
-            "~ eeeehhhhwww ~"
+            "~ Ugh ~"
           ]
           var rnd = Math.floor(Math.random() * messages.length);
         
