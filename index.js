@@ -4,26 +4,96 @@ const prefix = "."
 
 client.once("ready", () => {
   console.log("Ready!");
-  client.user.setActivity('talk to me', { type: 'PLAYING' })
+});
+
+const activities = [
+  ".help to Start!",
+  `I am on ${client.guilds.cache.size} server's`,
+  "Creator: Dyplay",
+  "Hi i am Talking Ben!"
+];
+
+client.on("ready", () => {
+  // run every 10 seconds
+  setInterval(() => {
+    // generate random number between 1 and list length.
+    const randomIndex = Math.floor(Math.random() * (activities.length - 1) + 1);
+    const newActivity = activities[randomIndex];
+
+    client.user.setActivity(newActivity);
+  }, 10000);
 });
 
 client.on('message' , (msg) => {
   if(msg.content == prefix + "credits" && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
-      .setAuthor('ben')
-      .setTitle('credits')
-      .setDescription(` Programmer: Dyplay | 
-      His Server: https://discord.gg/paVRxtce78ups`)
-      .setFooter(`@zodclips - owner`)
+      .setTitle("Invite")
+      .setDescription("")
 
       msg.channel.send(embed)
   }
 })
 
 client.on('message' , (msg) => {
-  if(msg.content == `@${client} help` && msg.guild && !msg.member.user.bot){
+  if(msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setAuthor('ben')
+      .setTitle('Command list')
+      .setDescription("``.help`` going to show you this page. (Showing you the help page)")
+      .setDescription("``.credits``` credits from the bot creator")
+      .setDescription("``.ben <message>`` tell something to ben.")
+      .setDescription("``.version`` show`s you the bot`s version!")
+      
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `ben eat` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setTitle("Talking Ben version")
+      .setDescription("version: v0.1")
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `ben eat` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setImage("https://c.tenor.com/UZOcqAyMu4QAAAAd/talking-ben-eating.gif")
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (message) => {
+  if(message.content.startsWith == "ben") {
+    message.reply("try it with ``.ben # your message`` ;D")
+  }
+})
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `ben drink` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `ben drink` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
+      msg.channel.send(embed)
+  }
+})
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
+    let avatarUrl = user.displayAvatarURL()
+      var embed = new Discord.MessageEmbed()
+      .setThumbnail(`${avatarUrl}`)
       .setColor('#fc9607')
       .setAuthor('ben')
       .setTitle('credits')
@@ -50,6 +120,7 @@ client.on('message', message => {
             "No",
             "Hahahah",
             "~ Hangs up ~",
+            "~ eeeehhhhwww ~"
           ]
           var rnd = Math.floor(Math.random() * messages.length);
         
