@@ -120,7 +120,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
   switch(args[0]) {
-    case `ben ${message.author}`:
+    case `ben`:
         rndMessage(message)
 
         function rndMessage(message) {
@@ -145,7 +145,7 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
   switch(args[0]) {
-    case `Ben ${message.author}`:
+    case `Ben`:
         rndMessage(message)
 
         function rndMessage(message) {
