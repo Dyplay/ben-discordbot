@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const { MessageEmbed } = require('discord.js');
 const prefix = "."
 
 client.once("ready", () => {
@@ -38,13 +39,14 @@ client.on('message' , (msg) => {
   if(msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
-      .setAuthor('ben')
+      .setAuthor('Ben')
       .setTitle('Command list')
-      .addField(".help | going to show you this page. (Showing you the help page) ")
-      .addField(".credits | credits from the bot creator")
-      .addField(".ben <message> | tell something to ben.")
-      .addField(".version | show's you the bot's version!")
-    
+      .addField(".help | going to show you this page. (Showing you the help page) ", true)
+      .addField(".credits | credits from the bot creator", true)
+      .addField(".ben <message> | tell something to ben.", true)
+      .addField(".version | show's you the bot's version!", true)
+      .addField(".drink | Ben will drink ", true)
+      .addField(".eat | Ben will eat ", true)
       msg.channel.send(embed)
   }
 })
@@ -67,13 +69,19 @@ client.on('message' , (msg) => {
 })
 
 client.on('message' , (message) => {
-  if(message.content.startsWith == "ben") {
-    message.reply("try it with ``.ben # your message`` ;D")
+  if(message.content.includes == "ben") {
+    message.reply("try it with ``.ben + your message`` ;D")
+  }
+})
+
+client.on('message' , (message) => {
+  if(message.content.includes == "Ben") {
+    message.reply("try it with ``.ben + your message`` ;D")
   }
 })
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + `ben drink` && msg.guild && !msg.member.user.bot){
+  if(msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
       msg.channel.send(embed)
@@ -120,5 +128,31 @@ client.on('message', message => {
     break;
   }
 })
+
+
+client.on('message', message => {
+
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+
+  switch(args[0]) {
+    case 'Ben':
+        rndMessage(message)
+
+        function rndMessage(message) {
+          var messages = [
+            "Yes",
+            "No",
+            "Hahahah",
+            "~ Hangs up ~",
+            "~ eeeehhhhwww ~"
+          ]
+          var rnd = Math.floor(Math.random() * messages.length);
+        
+          message.channel.send(messages[rnd]);
+      }
+    break;
+  }
+})
+
 
 client.login("OTQ0NjU3NzAwNjA2ODYxMzcy.YhEzCg.FoBSS4lf3XSIZp6_l6sa5XO1ckA");
