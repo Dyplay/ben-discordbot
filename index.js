@@ -42,7 +42,7 @@ client.on('message' , (msg) => {
       .setAuthor('Ben')
       .setTitle('Command list')
       .addField(".help | going to show you this page. (Showing you the help page) ", true)
-      .addField(".credits | credits from the bot creator", true)
+      .addField(".credits ", "credits from the bot creator")
       .addField(".ben <message> | tell something to ben.", true)
       .addField(".version | show's you the bot's version!", true)
       .addField(".drink | Ben will drink ", true)
