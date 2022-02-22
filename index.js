@@ -100,19 +100,44 @@ client.on('message' , (msg) => {
 
 client.on('message' , (msg) => {
   if(msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
-    let avatarUrl = user.displayAvatarURL()
       var embed = new Discord.MessageEmbed()
-      .setThumbnail(avatarUrl)
+      .setThumbnail(`${client.user.displayAvatarURL()}`)
       .setColor('#fc9607')
       .setAuthor('ben')
       .setTitle('credits')
       .setDescription(` Programmer: Dyplay | 
       His Server: https://discord.gg/paVRxtce78ups`)
+      .addField(`Requested from:`, `${msg.author.username}`)
       .setFooter(`@zodclips - owner`)
 
       msg.channel.send(embed)
   }
 })
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
+      .addField(`Requested from:`, `${msg.author.username}`)
+
+      msg.channel.send(embed)
+  }
+})
+
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `Newspaper` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
+      .addField(`Requested from:`, `${msg.author.username}`)
+
+      msg.channel.send(embed)
+  }
+})
+
+
 
 
 client.on('message', message => {
@@ -138,6 +163,7 @@ client.on('message', message => {
     break;
   }
 })
+
 
 
 client.on('message', message => {
