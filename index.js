@@ -8,7 +8,6 @@ client.once("ready", () => {
 
 const activities = [
   ".help to Start!",
-  `I am on ${client.guilds.cache.size} server's`,
   "Creator: Dyplay",
   "Hi i am Talking Ben!"
 ];
@@ -41,17 +40,17 @@ client.on('message' , (msg) => {
       .setColor('#fc9607')
       .setAuthor('ben')
       .setTitle('Command list')
-      .setDescription("``.help`` going to show you this page. (Showing you the help page)")
-      .setDescription("``.credits``` credits from the bot creator")
-      .setDescription("``.ben <message>`` tell something to ben.")
-      .setDescription("``.version`` show`s you the bot`s version!")
-      
+      .addField(".help | going to show you this page. (Showing you the help page) ")
+      .addField(".credits | credits from the bot creator")
+      .addField(".ben <message> | tell something to ben.")
+      .addField(".version | show's you the bot's version!")
+    
       msg.channel.send(embed)
   }
 })
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + `ben eat` && msg.guild && !msg.member.user.bot){
+  if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setTitle("Talking Ben version")
       .setDescription("version: v0.1")
@@ -60,7 +59,7 @@ client.on('message' , (msg) => {
 })
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + `ben eat` && msg.guild && !msg.member.user.bot){
+  if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setImage("https://c.tenor.com/UZOcqAyMu4QAAAAd/talking-ben-eating.gif")
       msg.channel.send(embed)
