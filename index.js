@@ -50,7 +50,7 @@ client.on('message' , (msg) => {
 })
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
+  if(msg.content == prefix + `version` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setTitle("Talking Ben version")
       .setDescription("version: v0.1")
@@ -69,14 +69,6 @@ client.on('message' , (msg) => {
 client.on('message' , (message) => {
   if(message.content.startsWith == "ben") {
     message.reply("try it with ``.ben # your message`` ;D")
-  }
-})
-
-client.on('message' , (msg) => {
-  if(msg.content == prefix + `ben drink` && msg.guild && !msg.member.user.bot){
-      var embed = new Discord.MessageEmbed()
-      .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
-      msg.channel.send(embed)
   }
 })
 
