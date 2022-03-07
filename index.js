@@ -165,6 +165,17 @@ client.on('message' , (msg) => {
   }
 })
 
+
+client.on('message' , (msg) => {
+  if(msg.content == prefix + `esfsesfsefse` && msg.guild && !msg.member.user.bot){
+      var embed = new Discord.MessageEmbed()
+      .setColor('#fc9607')
+      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
+      .addField(`Requested by:`, `${msg.author.username}`)
+
+      msg.channel.send(embed)
+  }
+})
 client.on('message', message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
