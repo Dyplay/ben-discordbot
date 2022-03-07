@@ -122,24 +122,6 @@ client.on('message' , (msg) => {
   }
 })
 
-
-client.on('message', message => {
-
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-  const args = message.content.slice(prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
-
-  if (!client.commands.has(command)) return;
-
-  try {
-      client.commands.get(command).execute(message, args);
-  } catch (error) {
-      console.error(error);
-      message.reply('do not write it twice you dumb cookie.');
-  }
-})
-
 client.on('message' , (msg) => {
   if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
