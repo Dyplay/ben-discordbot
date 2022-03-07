@@ -174,7 +174,9 @@ client.on('message' , (msg) => {
   if(msg.content == prefix + `servers` && msg.guild && !msg.member.user.bot){
     var embed = new Discord.MessageEmbed()
     .setColor('#fc9607')
-    .setDescription(`i am currently on ${client.guilds.cache.size} servers!`)
+    .setDescription(`i am currently on`)
+    .addField(guild)
+    .addField('servers!', '!')
 
     msg.channel.send(embed)
 }
