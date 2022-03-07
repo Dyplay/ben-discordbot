@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { MessageEmbed } = require('discord.js');
+const { BOT_TOKEN, BOT_OWNER_ID } = require('./config.json')
 const prefix = "."
 
 client.once("ready", () => {
@@ -122,14 +122,21 @@ client.on('message' , (msg) => {
   }
 })
 
-client.on('message' , (msg) => {
-  if(msg.content == prefix + `Newspaper` && msg.guild && !msg.member.user.bot){
-      var embed = new Discord.MessageEmbed()
-      .setColor('#fc9607')
-      .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
-      .addField(`Requested by:`, `${msg.author.username}`)
 
-      msg.channel.send(embed)
+client.on('message', message => {
+
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const command = args.shift().toLowerCase();
+
+  if (!client.commands.has(command)) return;
+
+  try {
+      client.commands.get(command).execute(message, args);
+  } catch (error) {
+      console.error(error);
+      message.reply('do not write it twice you dumb cookie.');
   }
 })
 
@@ -164,6 +171,13 @@ client.on('message' , (msg) => {
 
       msg.channel.send(embed)
   }
+  if(msg.content == prefix + `servers` && msg.guild && !msg.member.user.bot){
+    var embed = new Discord.MessageEmbed()
+    .setColor('#fc9607')
+    .setDescription(`i am currently on ${client.guilds.cache.size} servers!`)
+
+    msg.channel.send(embed)
+}
 })
 
 client.on('message', message => {
@@ -216,5 +230,28 @@ client.on('message', message => {
   }
 })
 
+// premium features
+
+client.on('message', message => {
+  const guildID = "938840031576088588"
+  const userID = `${message.author.id}`
+  
+  const guild = client.guilds.cache.get(guildID);
+  if (!guild.member(userID)) {
+    client.on('message' , (msg) => {
+      if(msg.content == prefix + `burp` && msg.guild && !msg.member.user.bot){
+          var embed = new Discord.MessageEmbed()
+          .setColor('#fc9607')
+          .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
+          .addField(`Requested by:`, `${msg.author.username}`)
+    
+          msg.channel.send(embed)
+      }
+    })
+  } else if (!guild.member(userID)) {
+    
+  }
+  // end
+  
 
 client.login("OTQ0NjU3NzAwNjA2ODYxMzcy.YhEzCg.FoBSS4lf3XSIZp6_l6sa5XO1ckA");
