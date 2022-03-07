@@ -230,28 +230,4 @@ client.on('message', message => {
   }
 })
 
-// premium features
-
-client.on('message', message => {
-  const guildID = "938840031576088588"
-  const userID = `${message.author.id}`
-  
-  const guild = client.guilds.cache.get(guildID);
-  if (!guild.member(userID)) {
-    client.on('message' , (msg) => {
-      if(msg.content == prefix + `burp` && msg.guild && !msg.member.user.bot){
-          var embed = new Discord.MessageEmbed()
-          .setColor('#fc9607')
-          .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
-          .addField(`Requested by:`, `${msg.author.username}`)
-    
-          msg.channel.send(embed)
-      }
-    })
-  } else if (!guild.member(userID)) {
-    
-  }
-  // end
-  
-
 client.login("OTQ0NjU3NzAwNjA2ODYxMzcy.YhEzCg.FoBSS4lf3XSIZp6_l6sa5XO1ckA");
