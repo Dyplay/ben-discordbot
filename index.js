@@ -122,6 +122,7 @@ client.on('message' , (msg) => {
   }
 })
 
+
 client.on('message' , (msg) => {
   if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
@@ -144,6 +145,15 @@ client.on('message' , (msg) => {
   }
 })
 
+client.on('message', (msg) => {
+  if(msg.content == prefix + 'servers' && msg.guild && !msg.member.user.bot){
+    const serverlist = new Discord.MessageEmbed()
+    .setColor('#fc9607')
+  .setDescription(`I am currently on ${client.guilds.cache.size} servers!`)
+    message.channel.send(serverlist)
+  }
+})
+
 client.on('message' , (msg) => {
   if(msg.content == prefix + `Burp` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
@@ -160,7 +170,7 @@ client.on('message' , (msg) => {
     .setDescription(`i am currently on`)
     .addField(guild)
     .addField('servers!', '!')
-      msg.channel.send(serverlist)
+      message.channel.send(serverlist)
   })
 }
 })
