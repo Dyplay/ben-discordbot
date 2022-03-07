@@ -170,7 +170,7 @@ client.on('message' , (msg) => {
     .setDescription(`i am currently on`)
     .addField(guild)
     .addField('servers!', '!')
-    message.channel.send(serverlist)
+    msg.channel.send(serverlist)
   })
 }
 })
