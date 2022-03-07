@@ -163,16 +163,6 @@ client.on('message' , (msg) => {
 
       msg.channel.send(embed)
   }
-  if(msg.content == prefix + `servers` && msg.guild && !msg.member.user.bot){
-    client.guilds.cache.forEach((guild) => {
-      const serverlist = new Discord.MessageEmbed()
-      .setColor('#fc9607')
-    .setDescription(`i am currently on`)
-    .addField(guild)
-    .addField('servers!', '!')
-    msg.channel.send(serverlist)
-  })
-}
 })
 
 client.on('message', message => {
