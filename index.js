@@ -150,7 +150,7 @@ client.on('message', (msg) => {
     const serverlist = new Discord.MessageEmbed()
     .setColor('#fc9607')
   .setDescription(`I am currently on ${client.guilds.cache.size} servers!`)
-    message.channel.send(serverlist)
+    msg.channel.send(serverlist)
   }
 })
 
