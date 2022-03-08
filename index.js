@@ -61,18 +61,22 @@ client.on('message' , (msg) => {
     .addField(`Requested by:`, `${msg.author.username}`)
     msg.channel.send(embed)
 }
+
 if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setImage("https://c.tenor.com/UZOcqAyMu4QAAAAd/talking-ben-eating.gif")
   .addField(`Requested by:`, `${msg.author.username}`)
   msg.channel.send(embed)
 }
+
 if(message.content == "ben") {
   message.reply("try it with ``.ben + your message`` ;D")
 }
+
 if(message.content == "Ben") {
   message.reply("try it with ``.ben + your message`` ;D")
 }
+
 if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setThumbnail('')
@@ -81,6 +85,7 @@ if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
   .addField(`Requested by:`, `${msg.author.username}`)
   msg.channel.send(embed)
 }
+
 if(msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
 var embed = new Discord.MessageEmbed()
 .setThumbnail(`${client.user.displayAvatarURL()}`)
@@ -94,6 +99,7 @@ His Server: https://discord.gg/paVRxtce78ups`)
 
 msg.channel.send(embed)
 }
+
 if(msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
 var embed = new Discord.MessageEmbed()
 .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
