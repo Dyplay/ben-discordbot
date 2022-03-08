@@ -2,8 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const { BOT_TOKEN, BOT_OWNER_ID, Prefix } = require('./config.json');
 client.userSettings = new Collection();
-const gencode = require('./commands/subfolder/generate');
-const redeem = require('./commands/subfolder/redeem');
 const clientowner = BOT_OWNER_ID
 const prefix = Prefix
 
