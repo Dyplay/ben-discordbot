@@ -14,29 +14,6 @@ const activities = [
   ``
 ];
 
-//Welcome & goodbye messages\\
-client.on('guildMemberAdd', member => {
-  const welcomeEmbed = new Discord.MessageEmbed()
-  const channel = '950775472843804754'
-  welcomeEmbed.setColor('#5cf000')
-  welcomeEmbed.setTitle('**' + member.user.username + '** Welcome! to Ben supports server **' + member.guild.memberCount + '**')
-  welcomeEmbed.setImage('https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Fmobile%2F000%2F039%2F636%2Ftbc.jpg')
-
-  channel.send(welcomeEmbed)
-})
-
-client.on('guildMemberRemove', member => {
-  const goodbyeEmbed = new Discord.MessageEmbed()
-  const channel = '950775472843804754'
-  goodbyeEmbed.setColor('#f00000')
-  goodbyeEmbed.setTitle('**' + member.user.username + '** Bye 🙌 **' + member.guild.memberCount + '**')
-  goodbyeEmbed.setImage('https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Fmobile%2F000%2F039%2F636%2Ftbc.jpg')
-
-  channel.send(goodbyeEmbed)
-})
-//Welcome & goodbye messages end\\
-
-
 client.on("ready", () => {
   // run every 10 seconds
   setInterval(() => {
