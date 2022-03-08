@@ -37,7 +37,7 @@ client.on("ready", () => {
 });
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
+  if (msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
       .setAuthor('Ben')
@@ -54,7 +54,7 @@ client.on('message' , (msg) => {
       msg.channel.send(embed)
   }
 
-  if(msg.content == prefix + `version` && msg.guild && !msg.member.user.bot){
+  if (msg.content == prefix + `version` && msg.guild && !msg.member.user.bot){
     var embed = new Discord.MessageEmbed()
     .setTitle("Talking Ben version")
     .setDescription("version: v0.1")
@@ -62,14 +62,14 @@ client.on('message' , (msg) => {
     msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setImage("https://c.tenor.com/UZOcqAyMu4QAAAAd/talking-ben-eating.gif")
   .addField(`Requested by:`, `${msg.author.username}`)
   msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setThumbnail('')
   .setTitle('Invite')
@@ -78,7 +78,7 @@ if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
   msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
 var embed = new Discord.MessageEmbed()
 .setThumbnail(`${client.user.displayAvatarURL()}`)
 .setColor('#fc9607')
@@ -92,14 +92,14 @@ His Server: https://discord.gg/paVRxtce78ups`)
 msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
 var embed = new Discord.MessageEmbed()
 .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
 .addField(`Requested by:`, `${msg.author.username}`)
 msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setColor('#fc9607')
   .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
@@ -108,7 +108,7 @@ if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
   msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setColor('#fc9607')
   .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945748888793526272/Design_ohne_Titel.gif')
@@ -116,7 +116,8 @@ if(msg.content == prefix + `newspaper` && msg.guild && !msg.member.user.bot){
 
   msg.channel.send(embed)
 }
-if(msg.content == prefix + `burp` && msg.guild && !msg.member.user.bot){
+
+if (msg.content == prefix + `burp` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setColor('#fc9607')
   .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
@@ -125,14 +126,14 @@ if(msg.content == prefix + `burp` && msg.guild && !msg.member.user.bot){
   msg.channel.send(embed)
 }
 
-if(msg.content == prefix + 'servers' && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + 'servers' && msg.guild && !msg.member.user.bot){
   const serverlist = new Discord.MessageEmbed()
   .setColor('#fc9607')
 .setDescription(`I am currently on ${client.guilds.cache.size} servers!`)
   msg.channel.send(serverlist)
 }
 
-if(msg.content == prefix + `Burp` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `Burp` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setColor('#fc9607')
   .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
@@ -141,7 +142,7 @@ if(msg.content == prefix + `Burp` && msg.guild && !msg.member.user.bot){
   msg.channel.send(embed)
 }
 
-if(msg.content == prefix + `esfsesfsefse` && msg.guild && !msg.member.user.bot){
+if (msg.content == prefix + `esfsesfsefse` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setColor('#fc9607')
   .setImage('https://cdn.discordapp.com/attachments/902913431563284510/945765945908027412/Design_ohne_Titel7.gif')
@@ -152,11 +153,11 @@ if(msg.content == prefix + `esfsesfsefse` && msg.guild && !msg.member.user.bot){
 })
 
 client.on('message', message => {
-  if(message.content == "ben") {
+  if (message.content == "ben") {
     message.reply("try it with ``.ben + your message`` ;D")
   }
   
-  if(message.content == "Ben") {
+  if (message.content == "Ben") {
     message.reply("try it with ``.ben + your message`` ;D")
   }
 })
