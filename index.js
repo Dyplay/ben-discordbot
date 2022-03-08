@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { BOT_TOKEN, BOT_OWNER_ID } = require('./config.json')
-const prefix = "."
+const { BOT_TOKEN, BOT_OWNER_ID, Prefix } = require('./config.json')
+client.userSettings = new Collection();
+const gencode = require('./commands/subfolder/generate')
+const redeem = require('./commands/subfolder/redeem')
+const prefix = Prefix
 
 client.once("ready", () => {
   console.log("Ready!");
@@ -226,6 +229,4 @@ client.on('message', message => {
   }
 })
 
-
-
-client.login("OTQ0NjU3NzAwNjA2ODYxMzcy.YhEzCg.FoBSS4lf3XSIZp6_l6sa5XO1ckA");
+client.login(BOT_TOKEN);
