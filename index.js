@@ -4,17 +4,21 @@ const { BOT_TOKEN, BOT_OWNER_ID, Prefix } = require('./config.json')
 client.userSettings = new Collection();
 const gencode = require('./commands/subfolder/generate')
 const redeem = require('./commands/subfolder/redeem')
+const { redeem, generate } = require('./commands/subfolder')
+const clientowner = BOT_OWNER_ID
 const prefix = Prefix
 
 client.once("ready", () => {
   console.log("Ready!");
+
 });
+
 
 const activities = [
   ".help to Start!",
   "Creator: Dyplay",
   "Hi i am Talking Ben!",
-  ``
+  `On ${client.guilds.cache.size} servers!`
 ];
 
 client.on("ready", () => {
@@ -79,15 +83,6 @@ client.on('message' , (message) => {
 })
 
 client.on('message' , (msg) => {
-  if(msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
-      var embed = new Discord.MessageEmbed()
-      .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
-      .addField(`Requested by:`, `${msg.author.username}`)
-      msg.channel.send(embed)
-  }
-})
-
-client.on('message' , (msg) => {
   if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setThumbnail('')
@@ -96,22 +91,25 @@ client.on('message' , (msg) => {
       .addField(`Requested by:`, `${msg.author.username}`)
       msg.channel.send(embed)
   }
-})
-
-client.on('message' , (msg) => {
   if(msg.content == prefix + `credits` && msg.guild && !msg.member.user.bot){
-      var embed = new Discord.MessageEmbed()
-      .setThumbnail(`${client.user.displayAvatarURL()}`)
-      .setColor('#fc9607')
-      .setAuthor('ben')
-      .setTitle('credits')
-      .setDescription(` Programmer: Dyplay | 
-      His Server: https://discord.gg/paVRxtce78ups`)
-      .addField(`Requested by:`, `${msg.author.username}`)
-      .setFooter(`@zodclips - owner`)
+    var embed = new Discord.MessageEmbed()
+    .setThumbnail(`${client.user.displayAvatarURL()}`)
+    .setColor('#fc9607')
+    .setAuthor('ben')
+    .setTitle('credits')
+    .setDescription(` Programmer: Dyplay | 
+    His Server: https://discord.gg/paVRxtce78ups`)
+    .addField(`Requested by:`, `${msg.author.username}`)
+    .setFooter(`@zodclips - owner`)
 
-      msg.channel.send(embed)
-  }
+    msg.channel.send(embed)
+}
+if(msg.content == prefix + `drink` && msg.guild && !msg.member.user.bot){
+  var embed = new Discord.MessageEmbed()
+  .setImage("https://c.tenor.com/hdPVLfpe81cAAAAC/talking-ben-drinking.gif")
+  .addField(`Requested by:`, `${msg.author.username}`)
+  msg.channel.send(embed)
+}
 })
 
 client.on('message' , (msg) => {
@@ -202,8 +200,6 @@ client.on('message', message => {
     break;
   }
 })
-
-
 
 client.on('message', message => {
 
