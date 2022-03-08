@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { BOT_TOKEN, BOT_OWNER_ID } = require('./config.json')
-const welcomemsg = require('./events/welcome-bye')
 const prefix = "."
 
 client.once("ready", () => {
@@ -17,25 +16,23 @@ const activities = [
 
 //Welcome & goodbye messages\\
 client.on('guildMemberAdd', member => {
-  member.roles.add(member.guild.roles.cache.find(i => i.name === ''))
-
   const welcomeEmbed = new Discord.MessageEmbed()
-
+  const channel = '950775472843804754'
   welcomeEmbed.setColor('#5cf000')
   welcomeEmbed.setTitle('**' + member.user.username + '** Welcome! to Ben supports server **' + member.guild.memberCount + '**')
-  welcomeEmbed.setImage('https://cdn.mos.cms.futurecdn.net/93GAa4wm3z4HbenzLbxWeQ-650-80.jpg.webp')
+  welcomeEmbed.setImage('https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Fmobile%2F000%2F039%2F636%2Ftbc.jpg')
 
-  member.guild.channels.cache.find(i => i.name === '💫-welcome').send(welcomeEmbed)
+  channel.send(welcomeEmbed)
 })
 
 client.on('guildMemberRemove', member => {
   const goodbyeEmbed = new Discord.MessageEmbed()
-
+  const channel = '950775472843804754'
   goodbyeEmbed.setColor('#f00000')
   goodbyeEmbed.setTitle('**' + member.user.username + '** Bye 🙌 **' + member.guild.memberCount + '**')
-  goodbyeEmbed.setImage('https://gamewith-en.akamaized.net/article/thumbnail/rectangle/22183.png')
+  goodbyeEmbed.setImage('https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Fmobile%2F000%2F039%2F636%2Ftbc.jpg')
 
-  member.guild.channels.cache.find(i => i.name === '💫-welcome').send(goodbyeEmbed)
+  channel.send(goodbyeEmbed)
 })
 //Welcome & goodbye messages end\\
 
