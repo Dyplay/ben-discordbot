@@ -1,15 +1,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { BOT_TOKEN, BOT_OWNER_ID, Prefix } = require('./config.json');
+const { BOT_TOKEN, Prefix } = require('./config.json');
 client.userSettings = new Collection();
-const clientowner = BOT_OWNER_ID
 const prefix = Prefix
 
 client.once("ready", () => {
   console.log("Ready!");
-
 });
-
 
 const activities = [
   ".help to Start!",
