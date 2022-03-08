@@ -12,6 +12,7 @@ const client = new Discord.Client({
   ]
 })
 const { BOT_TOKEN, Prefix } = require('./config.json');
+const { Message, MessageEmbed , messageCreate } = require('discord.js');
 const prefix = Prefix
 
 client.once("ready", () => {
