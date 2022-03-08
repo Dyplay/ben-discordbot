@@ -1,23 +1,5 @@
 {
-  "name": "reply-bot",
-  "version": "1.0.0",
-  "description": "A Discord bot that automatically replies and reacts to user messages",
-  "main": "index.js",
-  "scripts": {
-    "start": "npm run index.js"
-  },
-  "author": "Eshan Bharadwaj",
-  "license": "ISC",
   "dependencies": {
-    "canvas": "^2.9.0",
-    "dayjs": "^1.10.8",
-    "dotenv": "^8.2.0",
-    "moment": "^2.29.1",
-    "mongoose": "^6.2.4",
-    "node-cron": "^3.0.0",
-    "voucher-code-generator": "^1.2.0"
-  },
-  "devDependencies": {
-    "discord.js": "^14.0.0-dev.1646654941.b162f27"
+    "discord.js": "^13.6.0"
   }
 }
