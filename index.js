@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { BOT_TOKEN, BOT_OWNER_ID } = require('./config.json')
+const welcomemsg = require('./events/welcome-bye')
 const prefix = "."
 
 client.once("ready", () => {
@@ -13,6 +14,31 @@ const activities = [
   "Hi i am Talking Ben!",
   ``
 ];
+
+//Welcome & goodbye messages\\
+client.on('guildMemberAdd', member => {
+  member.roles.add(member.guild.roles.cache.find(i => i.name === ''))
+
+  const welcomeEmbed = new Discord.MessageEmbed()
+
+  welcomeEmbed.setColor('#5cf000')
+  welcomeEmbed.setTitle('**' + member.user.username + '** Welcome! to Ben supports server **' + member.guild.memberCount + '**')
+  welcomeEmbed.setImage('https://cdn.mos.cms.futurecdn.net/93GAa4wm3z4HbenzLbxWeQ-650-80.jpg.webp')
+
+  member.guild.channels.cache.find(i => i.name === '💫-welcome').send(welcomeEmbed)
+})
+
+client.on('guildMemberRemove', member => {
+  const goodbyeEmbed = new Discord.MessageEmbed()
+
+  goodbyeEmbed.setColor('#f00000')
+  goodbyeEmbed.setTitle('**' + member.user.username + '** Bye 🙌 **' + member.guild.memberCount + '**')
+  goodbyeEmbed.setImage('https://gamewith-en.akamaized.net/article/thumbnail/rectangle/22183.png')
+
+  member.guild.channels.cache.find(i => i.name === '💫-welcome').send(goodbyeEmbed)
+})
+//Welcome & goodbye messages end\\
+
 
 client.on("ready", () => {
   // run every 10 seconds
@@ -225,5 +251,7 @@ client.on('message', message => {
     break;
   }
 })
+
+
 
 client.login("OTQ0NjU3NzAwNjA2ODYxMzcy.YhEzCg.FoBSS4lf3XSIZp6_l6sa5XO1ckA");
