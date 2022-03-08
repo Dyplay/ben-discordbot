@@ -69,14 +69,6 @@ if(msg.content == prefix + `eat` && msg.guild && !msg.member.user.bot){
   msg.channel.send(embed)
 }
 
-if(message.content == "ben") {
-  message.reply("try it with ``.ben + your message`` ;D")
-}
-
-if(message.content == "Ben") {
-  message.reply("try it with ``.ben + your message`` ;D")
-}
-
 if(msg.content == prefix + `invite` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
   .setThumbnail('')
@@ -157,6 +149,16 @@ if(msg.content == prefix + `esfsesfsefse` && msg.guild && !msg.member.user.bot){
 
   msg.channel.send(embed)
 }
+})
+
+client.on('message', message => {
+  if(message.content == "ben") {
+    message.reply("try it with ``.ben + your message`` ;D")
+  }
+  
+  if(message.content == "Ben") {
+    message.reply("try it with ``.ben + your message`` ;D")
+  }
 })
 
 client.on('message', message => {
