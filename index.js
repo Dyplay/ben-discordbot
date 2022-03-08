@@ -36,7 +36,7 @@ client.on("ready", () => {
   }, 10000);
 });
 
-client.on('message' , (msg) => {
+client.on('messageCreate' , (msg) => {
   if (msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
       var embed = new Discord.MessageEmbed()
       .setColor('#fc9607')
@@ -152,7 +152,7 @@ if (msg.content == prefix + `esfsesfsefse` && msg.guild && !msg.member.user.bot)
 }
 })
 
-client.on('message', message => {
+client.on('messageCreate', message => {
   if (message.content == "ben") {
     message.reply("try it with ``.ben + your message`` ;D")
   }
@@ -162,7 +162,7 @@ client.on('message', message => {
   }
 })
 
-client.on('message', message => {
+client.on('messageCreate', message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
@@ -186,7 +186,7 @@ client.on('message', message => {
   }
 })
 
-client.on('message', message => {
+client.on('messageCreate', message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
