@@ -37,7 +37,7 @@ client.on("ready", () => {
   }, 10000);
 });
 
-client.on('messageCreate', msg => {
+client.on('message', msg => {
   if (msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
     var embed = new Discord.MessageEmbed()
     .setColor('#fc9607')
@@ -56,7 +56,7 @@ client.on('messageCreate', msg => {
 }
 })
 
-client.on('messageCreate', msg => {
+client.on('message', msg => {
 
 
 if (msg.content == prefix + `version` && msg.guild && !msg.member.user.bot){
