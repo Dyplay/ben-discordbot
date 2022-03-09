@@ -37,7 +37,7 @@ client.on("ready", () => {
   }, 10000);
 });
 
-client.on('messageCreate', message => {
+client.on('messageCreate', msg => {
   if (msg.content == prefix + `help` && msg.guild && !msg.member.user.bot){
     var embed = new Discord.MessageEmbed()
     .setColor('#fc9607')
@@ -54,6 +54,10 @@ client.on('messageCreate', message => {
     .addField(".burp", "Ben will burp")
     msg.channel.send(embed)
 }
+})
+
+client.on('messageCreate', msg => {
+
 
 if (msg.content == prefix + `version` && msg.guild && !msg.member.user.bot){
   var embed = new Discord.MessageEmbed()
@@ -151,6 +155,7 @@ var embed = new Discord.MessageEmbed()
 
 msg.channel.send(embed)
 }
+
 })
 
 client.on('messageCreate', message => {
