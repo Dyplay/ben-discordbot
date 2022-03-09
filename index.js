@@ -1,3 +1,6 @@
+const { BOT_TOKEN, Prefix } = require('./config.json');
+const Discord = require('discord.js');
+const prefix = Prefix
 const client = new Discord.Client({ 
   intents: [
     Discord.Intents.FLAGS.GUILDS,
@@ -12,9 +15,6 @@ const client = new Discord.Client({
     Discord.Intents.FLAGS.GUILD_INTEGRATIONS
   ]
 })
-const { BOT_TOKEN, Prefix } = require('./config.json');
-const Discord = require('discord.js');
-const prefix = Prefix
 
 client.once("ready", () => {
   console.log("Ready!");
