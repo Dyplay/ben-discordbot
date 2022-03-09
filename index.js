@@ -8,11 +8,13 @@ const client = new Discord.Client({
     Discord.Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
     Discord.Intents.FLAGS.GUILD_MEMBERS,
     Discord.Intents.FLAGS.GUILD_INVITES,
-    Discord.Intents.FLAGS.GUILD_WEBHOOKS
+    Discord.Intents.FLAGS.GUILD_WEBHOOKS,
+    Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING,
+    Discord.Intents.FLAGS.GUILD_INTEGRATIONS
   ]
 })
 const { BOT_TOKEN, Prefix } = require('./config.json');
-const { Message, MessageEmbed , messageCreate } = require('discord.js');
+const  Discord = require('discord.js');
 const prefix = Prefix
 
 client.once("ready", () => {
