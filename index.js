@@ -1,5 +1,6 @@
 const { BOT_TOKEN, Prefix } = require('./config.json');
 const Discord = require('discord.js');
+
 const prefix = Prefix
 const client = new Discord.Client({ 
   intents: [
