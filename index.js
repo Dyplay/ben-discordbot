@@ -14,7 +14,7 @@ const client = new Discord.Client({
   ]
 })
 const { BOT_TOKEN, Prefix } = require('./config.json');
-const  Discord = require('discord.js');
+const Discord = require('discord.js');
 const prefix = Prefix
 
 client.once("ready", () => {
